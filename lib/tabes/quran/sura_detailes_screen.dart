@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/model/sura_model.dart';
+import 'package:islami/tabes/quran/sura_content_items.dart';
 import 'package:islami/theme_data.dart';
 
 import '../../app_color.dart';
@@ -48,6 +49,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
               SizedBox( height: 20,) ,
               Text(args.numOfVerses,style:
               TextStyle(color: AppColors.primaryColor),),
+              SizedBox( height: 22,),
               Expanded(
                 child:verses.isEmpty?
                     const Center(child: CircularProgressIndicator(
@@ -57,9 +59,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                 ListView.builder
                   (
                     itemBuilder: (context,index){
-                      return Text(verses[index],style:
-                      const TextStyle(color: AppColors.primaryColor),);
-
+                      return  SuraContentItems(content:verses [index], index: index,);
                     },
                     itemCount:verses.length
                       ),
