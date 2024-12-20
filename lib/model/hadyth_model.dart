@@ -3,4 +3,5 @@ class HadythModel{
   List<String >content ;
 
   HadythModel({required this.title,required this.content} );
+
 }

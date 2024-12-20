@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/splash_screen.dart';
+import 'package:islami/tabes/hdyth/hdyth_detailes_screen.dart';
 import 'package:islami/tabes/quran/sura_detailes_screen.dart';
 import 'home_screen.dart';
 
@@ -19,6 +20,7 @@ void main() {
          SplashScreen.routeName: (context) => SplashScreen(),
          HomeScreen.routeName: (context) => HomeScreen(),
          SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
+         HdythDetailsScreen.routeName: (context) => HdythDetailsScreen(),
        },
        themeMode : ThemeMode.dark,
 

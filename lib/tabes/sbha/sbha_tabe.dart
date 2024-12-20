@@ -17,10 +17,10 @@ class _SebhaPageState extends State<SebhaPage> with SingleTickerProviderStateMix
   @override
   void initState() {
     super.initState();
-    // أنيميشن الدوران
+
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 300), // مدة الدوران
+      duration: Duration(milliseconds: 300),
     );
 
     _animation = Tween<double>(begin: 0, end: pi / 15).animate(_controller);
@@ -30,11 +30,11 @@ class _SebhaPageState extends State<SebhaPage> with SingleTickerProviderStateMix
     setState(() {
       counter++;
       if (counter >= 100) {
-        counter = 0; // إعادة العداد لوصل لـ 100
+        counter = 0;
       }
     });
 
-    // إعادة تشغيل الأنيميشن
+
     _controller.forward(from: 0);
   }
 
@@ -47,7 +47,7 @@ class _SebhaPageState extends State<SebhaPage> with SingleTickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-  backgroundColor: Colors.black,
+      backgroundColor: Colors.transparent,
       body: Container(
         margin: const EdgeInsets.all(14),
         decoration: const BoxDecoration(
@@ -58,7 +58,7 @@ class _SebhaPageState extends State<SebhaPage> with SingleTickerProviderStateMix
     )),
         child: Center(
           child: GestureDetector(
-            onTap: incrementTasbeeh, // عند الضغط، زود العد
+            onTap: incrementTasbeeh,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -66,7 +66,7 @@ class _SebhaPageState extends State<SebhaPage> with SingleTickerProviderStateMix
                 const Text('سَبِّحِ اسْمَ رَبِّكَ الأعلى ',
                   style: TextStyle(color:AppColors.primaryColor,fontSize:30,fontWeight:FontWeight.bold ),),
                 SizedBox(height:40,),
-                // الدوران مع التسبيح
+
                 AnimatedBuilder(
                   animation: _animation,
                   builder: (context, child) {
@@ -80,7 +80,7 @@ class _SebhaPageState extends State<SebhaPage> with SingleTickerProviderStateMix
                             width: 400,
                             height: 400,
                           ),
-                          // هنا ممكن تضيف أي عناصر إضافية زي النص مثلاً
+
                           SizedBox(height: 15,),
                           Text(
                             'سبحان الله $counter',

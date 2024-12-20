@@ -1,12 +1,21 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../../app_color.dart';
 
-class RadioTabe  extends StatelessWidget {
+class RadioTabe  extends StatefulWidget {
+
   const RadioTabe ({super.key});
 
+
+  @override
+  State<RadioTabe> createState() => _RadioTabeState();
+}
+
+class _RadioTabeState extends State<RadioTabe> {
   @override
   Widget build(BuildContext context) {
+    Color containerColor = AppColors.primaryColor;
     return Container(
       margin: const EdgeInsets.all(14),
       child: Center(
@@ -19,24 +28,30 @@ class RadioTabe  extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
 
-                  Container(
+                    Container(
 
-                padding: EdgeInsets.only(left: 40,right: 40,top:10,bottom: 10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: AppColors.primaryColor,
+                                    padding: EdgeInsets.only(left: 40,right: 40,top:10,bottom: 10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: AppColors.primaryColor,
+                      ),
+                      child: const Text(
+                        "Radio",
+                        style: TextStyle(color: AppColors.blackColor),
+                      ),
                     ),
-                    child: Text(
-                      "Radio",
-                      style: TextStyle(color: AppColors.blackColor),
-                    ),
-                  ),
-                  SizedBox(width: 10),
-                  Text(
-                    "Reciters",
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: AppColors.whiteColor,
+
+                  const SizedBox(width: 10),
+                  InkWell(
+
+                    child: Container(
+                      child: const Text(
+                        "Reciters",
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: AppColors.whiteColor,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -45,7 +60,7 @@ class RadioTabe  extends StatelessWidget {
         Container(
             padding: EdgeInsets.only(left: 40,right: 40,top:10,bottom: 10),
             decoration: BoxDecoration(borderRadius:BorderRadius.circular(20) ,
-                color:AppColors.primaryColor ), 
+                color:AppColors.primaryColor ),
      child:  Column(
        crossAxisAlignment: CrossAxisAlignment.stretch,
        children: [
@@ -117,4 +132,9 @@ class RadioTabe  extends StatelessWidget {
 
     );
   }
+
+
 }
+
+
+
